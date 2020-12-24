@@ -26,11 +26,11 @@ def drawdown(df):
 
 fig = go.Figure()
 
-fig.add_trace(go.Scatter(
-    x=tesla_df.index, 
-    y=drawdown(tesla_df)["Value"], 
-    mode='lines',
-    line=dict(color='#59948E', width=2)))
+# fig.add_trace(go.Scatter(
+#     x=tesla_df.index, 
+#     y=drawdown(tesla_df)["Value"], 
+#     mode='lines',
+#     line=dict(color='#59948E', width=2)))
 
 fig.add_trace(go.Scatter(
     x=tesla_df.index, 
@@ -43,4 +43,4 @@ fig.update_layout(showlegend=False,
     title='Value and drawdown of TSLA over the year 2020',
     yaxis_title="Value of £1 nominal",)
 
-fig.write_image(".png")
+fig.write_image("posts/drawdown/max.png")
