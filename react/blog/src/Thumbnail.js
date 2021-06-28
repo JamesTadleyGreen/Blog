@@ -1,6 +1,6 @@
 import React from 'react'; // Import the Component component from React
-import {ImageBackground, View, Text, StyleSheet} from 'react-native'
-import { makeStyles, withTheme } from '@material-ui/core/styles';
+import { Text } from 'react-native'
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Box from '@material-ui/core/Box';
@@ -9,9 +9,19 @@ import './App.css';
 export default function Thumbnail(props) {
     const styles = useStyles();
 
-    console.log(props)
+    // function mouseOnThumbnail(e) {
+    //   e.target.style.background = 'red';
+    // }
+
+    // function mouseOffThumbnail(e) {
+    //   e.target.style.background = 'none';
+    // }
+
+    console.log(styles.card)
+    var thumbClass=styles.card + " click"
+    console.log(thumbClass)
     return (
-        <Card className={styles.card}>
+        <Card className={thumbClass}>
         <CardMedia
             className={styles.media}
             image={
@@ -31,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 'none',
         position: 'relative',
         margin: 20,
+        transitionDuration: '10s',
         '&:after': {
           content: '""',
           display: 'block',
@@ -52,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
         color: "#ffffff",
     },
     media: {
-        height: 0,
         height:"100%",
         width:"100%",
         paddingTop: '56.25%', // 16:9

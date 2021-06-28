@@ -52,3 +52,9 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.click:hover {
+  transition: opacity 1s ease, transform 0.5s ease;
+  opacity: 0.1;
+  transform: scale(1.01);
+}
