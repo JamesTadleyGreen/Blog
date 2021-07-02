@@ -1,37 +1,42 @@
 import React from 'react'; // Import the Component component from React
 import { Text } from 'react-native'
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import Box from '@material-ui/core/Box';
+import { Card, CardMedia, Box, Typography, Paper }  from '@material-ui/core';
+
 import './App.css';
  
 export default function Thumbnail(props) {
     const styles = useStyles();
+    var thumbClass=styles.media + " click"
 
-    // function mouseOnThumbnail(e) {
-    //   e.target.style.background = 'red';
-    // }
+    function showThumbDesc(e) {
+      e.target.nextElementSibling.style.visibility = 'visible';
+      console.log(e.target.children);
+      console.log(e.target.nextElementSibling);
+      console.log(e);
+    }
 
-    // function mouseOffThumbnail(e) {
-    //   e.target.style.background = 'none';
-    // }
+    function hideThumbDesc(e) {
+      e.target.nextElementSibling.style.visibility = 'hidden';
+    }
 
-    console.log(styles.card)
-    var thumbClass=styles.card + " click"
-    console.log(thumbClass)
     return (
-        <Card className={thumbClass}>
-        <CardMedia
-            className={styles.media}
-            image={
-            props.image
-            }
-        />
-        <Box py={3} px={2} className={styles.content}>
-            <Text className={styles.boxText}>asd</Text>
-        </Box>
-        </Card>
+      <Card className={styles.card}>
+        <Link to={props.link} 
+              onMouseOver={showThumbDesc}
+              onMouseLeave={hideThumbDesc}>
+          <CardMedia 
+              className={thumbClass}
+              image={
+              props.image
+              }
+          />
+          <Paper className={styles.overlay} elevation={1} square >
+              {props.title}
+          </Paper>
+        </Link>
+      </Card>
     );
 }
 
@@ -41,17 +46,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 'none',
         position: 'relative',
         margin: 20,
-        transitionDuration: '10s',
-        '&:after': {
-          content: '""',
-          display: 'block',
-          position: 'absolute',
-          width: '100%',
-          height: '64%',
-          bottom: 0,
-          zIndex: 1,
-          background: 'linear-gradient(to top, #000, rgba(0,0,0,0))',
-        },
       },
     content: {
         position: 'absolute',
@@ -59,12 +53,22 @@ const useStyles = makeStyles((theme) => ({
         bottom: 0,
         width: '100%',
       },
-    boxText: {
-        color: "#ffffff",
+    overlay: {
+      position: 'absolute',
+      height: '50%',
+      width: '50%',
+      top: '25%',
+      left: '25%',
+      textAlign: 'center',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      color: 'black',
+      zIndex: 5,
+      backgroundColor: 'white'
     },
     media: {
         height:"100%",
         width:"100%",
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '100%', // 16:9
       },
     }));

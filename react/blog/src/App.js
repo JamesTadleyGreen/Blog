@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 // Pages
 import Projects from './Projects.js';
+import TimeLine from './TimeLine.js';
 import About from './About.js';
 
 
@@ -26,6 +27,7 @@ function App() {
                                           
             {/* Set up the Links */}
             <Link to="/Blog" className="item">Projects</Link>
+            <Link to="/TimeLine" className="item">TimeLine</Link>
             <Link to="/about" className="item">About</Link>
   
           </div>
@@ -33,6 +35,7 @@ function App() {
 
         {/* Set up the Router */}
         <Route exact path="/Blog" component={Projects} />
+        <Route path="/TimeLine" component={TimeLine} />
         <Route path="/about" component={About} />
   
       </div>
