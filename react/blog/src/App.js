@@ -15,7 +15,7 @@ import TimeLine from './TimeLine.js';
 import About from './About.js';
 
 // Navbar
-import Navbar from './Navbar';
+import Navigation from './Navbar';
 
 
 
@@ -25,7 +25,7 @@ function App() {
     //console.log(size)
     <BrowserRouter>
       <div  className="App">
-        <Navbar/>
+        <Navigation/>
         <Switch>                
             <Route path="/TimeLine" component={TimeLine} />
             <Route path="/about" component={About} />
