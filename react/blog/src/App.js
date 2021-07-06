@@ -4,13 +4,18 @@ import React from 'react';
 import logo from './logo.svg';
 
 // Import the BrowserRouter, Route and Link components
-import { BrowserRouter, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter, Route, Switch } from 'react-router-dom'; 
 //import { useGlobalEvent } from "beautiful-react-hooks";
+
+//import Navbar from './Navbar.js'
 
 // Pages
 import Projects from './Projects.js';
 import TimeLine from './TimeLine.js';
 import About from './About.js';
+
+// Navbar
+import Navbar from './Navbar';
 
 
 
@@ -19,24 +24,13 @@ function App() {
   return (
     //console.log(size)
     <BrowserRouter>
-      <div className="App">
-  
-        <div className="navigation">
-          <img src={logo} className="logo-image" alt="Logo" width="50" height="50"/>
-          <div className="navigation-sub">
-                                          
-            {/* Set up the Links */}
-            <Link to="/Blog" className="item">Projects</Link>
-            <Link to="/TimeLine" className="item">TimeLine</Link>
-            <Link to="/about" className="item">About</Link>
-  
-          </div>
-        </div>
-
-        {/* Set up the Router */}
-        <Route exact path="/Blog" component={Projects} />
-        <Route path="/TimeLine" component={TimeLine} />
-        <Route path="/about" component={About} />
+      <div  className="App">
+        <Navbar/>
+        <Switch>                
+            <Route path="/TimeLine" component={TimeLine} />
+            <Route path="/about" component={About} />
+            <Route exact path="/Blog" component={Projects} />
+        </Switch>
   
       </div>
     </BrowserRouter>

@@ -18,6 +18,7 @@ export default function TimeLine() {
                     title="Title"
                     subtitle="Subtitle"
                     desc="A small little description of the project and this feels like it should be in the backend."
+                    img="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
                     />
                 </TimelineContent>
             </TimelineItem>
@@ -32,6 +33,7 @@ export default function TimeLine() {
                     title="Title"
                     subtitle="Subtitle"
                     desc="A small little description of the project and this feels like it should be in the backend."
+                    img="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
                     />
                 </TimelineContent>
             </TimelineItem>
@@ -46,6 +48,7 @@ export default function TimeLine() {
                     title="Title"
                     subtitle="Subtitle"
                     desc="A small little description of the project and this feels like it should be in the backend."
+                    img="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
                     />
                 </TimelineContent>
             </TimelineItem>
